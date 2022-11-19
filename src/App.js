@@ -5,6 +5,7 @@ import FeedbackList from './components/FeedbackList'
 import Header from './components/Header'
 import FeedbackData from './data/FeedbackData'
 import FeedbackStats from './components/FeedbackStats'
+import FeedbackForm from './components/FeedbackForm'
 
 export default function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
@@ -14,11 +15,14 @@ export default function App() {
      setFeedback(feedback.filter((item) => item.id !== id))
     }
   return (
-    <div>
+    <>
       <Header/>
-      <FeedbackStats feedback={feedback}/>
-      <FeedbackList feedback={feedback} deleteHandler={deleteFeedback}/>
-    </div>
+        <div className='container'>
+          <FeedbackForm/>
+          <FeedbackStats feedback={feedback}/>
+          <FeedbackList feedback={feedback} deleteHandler={deleteFeedback}/>
+        </div>
+    </>
   )
 }
 
