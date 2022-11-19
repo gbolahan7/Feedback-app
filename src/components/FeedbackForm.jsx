@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './shared/Card'
 import {useState} from 'react'
+import Button from './shared/Button'
 
 export default function FeedbackForm() {
     const [text, setText] = useState('')
@@ -15,7 +16,7 @@ export default function FeedbackForm() {
         {/* rating select component to do*/}
         <div className='input-group'>
             <input onChange={handleTextChange} type="text" name="" placeholder='Write a review' value={text}/>
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
         </div>
       </form>
     </Card>
