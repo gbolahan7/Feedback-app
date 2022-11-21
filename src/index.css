@@ -13,9 +13,9 @@ body {
   line-height: 1.6;
 }
 
-/* ul {
+ul {
   list-style: none;
-} */
+}
 
 .container {
   max-width: 768px;
