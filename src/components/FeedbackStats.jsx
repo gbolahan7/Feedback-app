@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import FeedbackContext from '../context/FeedbackContext';
 
@@ -8,11 +7,12 @@ import FeedbackContext from '../context/FeedbackContext';
 export default function FeedbackStats() {
   const {feedback} = useContext(FeedbackContext)
 
-  //calc ratings average
+  // //calc ratings average
   let average = feedback.reduce((acc, cur) => {
     return acc + cur.rating},0) / feedback.length
 
-    average = average.toFixed(1).replace(/[.,]0$/, '') //will make sure it is one decimal place but remove 0 when it is in dec places
+    //will make sure it is one decimal place but remove 0 when it is in dec places
+    average = average.toFixed(1).replace(/[.,]0$/, '') 
   return (
     <div className='feedback-stats'>
       <h4>{feedback.length} Reviews</h4>
@@ -20,8 +20,3 @@ export default function FeedbackStats() {
     </div>
   )
 }
-
-
-// FeedbackStats.propTypes = {
-//   feedback: PropTypes.array.isRequired,
-// }
